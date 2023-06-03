@@ -1,0 +1,12 @@
+start: r(x) := 34
+    a := r(x)
+    r(h) := r(x)%10
+    r(g) := 0
+    goto check
+check: if r(h) = a then goto finish
+    r(h) := a % 10
+    r(g) := r(g)+r(h)
+    a := a - r(h)
+    a := a / 10
+    goto check
+finish: r(e) := r(g) + a

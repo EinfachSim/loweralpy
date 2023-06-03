@@ -1,0 +1,37 @@
+init:
+    r(a) := 1
+    r(b) := 2
+    r(c) := 3
+    r(d) := 4
+    r(w) := 5
+    r(x) := 6
+    r(y) := 7
+    r(z) := 8
+main:
+    call det
+    goto ende
+mult:
+    r(k) := 0
+    loop:
+        a := r(a)
+        r(h) := a * r(w)
+        r(i) := a * r(x)
+        a := r(b)
+        r(j) := a * r(y)
+        r(h) := r(h) + r(j)
+        r(j) := a * r(z)
+        r(i) := r(i) + r(j)
+        r(a) :=r(c)
+        r(b) := r(d)
+        r(c) := r(h)
+        r(d) := r(i)
+        r(k) := r(k) + 1
+        if r(k) < 2 then goto loop
+        return
+det:
+    call mult
+    a := r(a) * r(d)
+    r(h) := r(c) * r(b)
+    r(h) := a - r(h)
+    return
+ende:

@@ -1,0 +1,17 @@
+a := 2
+b := 1
+r(h):=a+b
+goto 5
+if r(h) >= a then goto 6
+push r(h)
+pop
+somelabel:
+a := b
+call func
+goto ende
+func:
+c := 7
+r(d) := a+b
+r(d) := r(d) + c
+return
+ende:
